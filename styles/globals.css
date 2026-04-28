@@ -130,8 +130,8 @@ body::after {
   line-height: 0.78;
   display: inline-block;
   transform: rotate(-2deg);
-  margin-top: -0.32em;
-  margin-bottom: -0.08em;
+  margin-top: -0.18em;
+  margin-bottom: -0.28em;
   vertical-align: top;
 }
 .script-tight { transform: rotate(-1deg); }

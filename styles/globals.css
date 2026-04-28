@@ -119,18 +119,23 @@ body::after {
 .h-3 { font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.08; letter-spacing: 0; }
 .h-4 { font-size: 1.35rem; line-height: 1.15; letter-spacing: 0; }
 
-/* The script accent — replaces United's italic serif move */
+/* The script accent — replaces United's italic serif move
+   Pulled up tight against the Anton line above (Caveat baseline sits lower in its em-box) */
 .serif, .script {
   font-family: var(--font-script);
   font-weight: 500;
   text-transform: none;
   letter-spacing: 0;
-  font-size: 1.05em;
-  line-height: 0.95;
+  font-size: 1.08em;
+  line-height: 0.78;
   display: inline-block;
   transform: rotate(-2deg);
+  margin-top: -0.32em;
+  margin-bottom: -0.08em;
+  vertical-align: top;
 }
 .script-tight { transform: rotate(-1deg); }
+.nowrap { white-space: nowrap; }
 
 .lead { font-size: clamp(1.05rem, 1.45vw, 1.2rem); line-height: 1.6; color: var(--text-soft); max-width: 60ch; font-weight: 400; }
 .text-soft { color: var(--text-soft); }

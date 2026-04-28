@@ -81,13 +81,26 @@
               </label>
             </div>
 
-            <h3 class="h-3" style="margin: 2rem 0 1.25rem;">Pickup <span class="serif text-amber">when.</span></h3>
-            <div class="time-pick">
-              <label><input type="radio" name="time" value="asap" checked /><span>ASAP</span></label>
-              <label><input type="radio" name="time" value="30" /><span>30 min</span></label>
-              <label><input type="radio" name="time" value="45" /><span>45 min</span></label>
-              <label><input type="radio" name="time" value="60" /><span>1 hour</span></label>
+            <h3 class="h-3" style="margin: 2rem 0 1.25rem;">Pickup <span class="serif text-amber">how.</span></h3>
+            <div class="location-pick">
+              <label>
+                <input type="radio" name="method" value="in-person" checked />
+                <span class="location-pick-name">In-person</span>
+                <span class="location-pick-detail">Walk in · grab from the bar</span>
+              </label>
+              <label>
+                <input type="radio" name="method" value="drive-thru" />
+                <span class="location-pick-name">Drive-thru</span>
+                <span class="location-pick-detail">Pull up · we bring it out</span>
+              </label>
             </div>
+
+            <h3 class="h-3" style="margin: 2rem 0 1.25rem;">Pickup <span class="serif text-amber">when.</span></h3>
+            <div class="field" style="gap: 0.6rem;">
+              <label for="pickup-time">Today's slots · 10-minute windows</label>
+              <select id="pickup-time" name="time" required></select>
+            </div>
+            <p style="font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin-top: 0.6rem;" id="hoursNote">Open today · 6:30a — 6p</p>
           </div>
 
           <div class="checkout-panel" data-reveal data-delay="2">
@@ -178,6 +191,14 @@
         <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
           <span>Pickup at</span>
           <span style="color: var(--ink); text-align: right;" id="successLocation">Covington</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
+          <span>Method</span>
+          <span style="color: var(--ink); text-align: right;" id="successMethod">In-person</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
+          <span>Ready by</span>
+          <span style="color: var(--ink); text-align: right;" id="successTime">—</span>
         </div>
         <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
           <span>Total charged</span>

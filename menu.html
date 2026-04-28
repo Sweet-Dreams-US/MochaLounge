@@ -202,6 +202,26 @@
   </div>
 </footer>
 
+<!-- Customize sheet -->
+<div class="customize-overlay" id="customizeOverlay" aria-hidden="true"></div>
+<aside class="customize-sheet" id="customizeSheet" role="dialog" aria-label="Customize your order">
+  <div class="customize-header">
+    <div>
+      <div class="customize-name" id="customizeName">Item</div>
+      <div class="customize-base" id="customizeBase">Starting at $0.00</div>
+    </div>
+    <button class="customize-close" id="customizeClose" aria-label="Close">✕</button>
+  </div>
+  <div class="customize-body" id="customizeBody"></div>
+  <div class="customize-footer">
+    <button class="customize-add" id="customizeAdd" type="button">
+      <span>Add to Order</span>
+      <span class="customize-add-price" id="customizeAddPrice">$0.00</span>
+    </button>
+    <p class="cart-note" style="margin: 0;">Demo upsells · live site uses Square modifiers</p>
+  </div>
+</aside>
+
 <!-- Cart FAB -->
 <button class="cart-fab" id="cartFab" aria-label="View your order">
   <span>BAG</span>

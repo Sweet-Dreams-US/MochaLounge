@@ -1,7 +1,7 @@
-// Order page — render cart, handle fake checkout
+// Order page — render cart, generate pickup time slots, handle fake checkout
 (() => {
   if (!window.MochaCart) return;
-  const { read, total, remove, clear } = window.MochaCart;
+  const { read, total, remove, clear, itemTotal } = window.MochaCart;
 
   const summaryEl = document.getElementById('orderSummary');
   const totalEl = document.getElementById('orderTotal');
@@ -13,8 +13,23 @@
   const successTotal = document.getElementById('successTotal');
   const successId = document.getElementById('successId');
   const successLocation = document.getElementById('successLocation');
+  const successMethod = document.getElementById('successMethod');
+  const successTime = document.getElementById('successTime');
+  const timeSelect = document.getElementById('pickup-time');
+  const hoursNote = document.getElementById('hoursNote');
 
   const TAX_RATE = 0.07;
+
+  // Hours per weekday (0=Sun, 6=Sat)
+  const HOURS = {
+    0: { open: '8:00', close: '15:00', label: '8a — 3p' },
+    1: { open: '6:30', close: '18:00', label: '6:30a — 6p' },
+    2: { open: '6:30', close: '18:00', label: '6:30a — 6p' },
+    3: { open: '6:30', close: '18:00', label: '6:30a — 6p' },
+    4: { open: '6:30', close: '18:00', label: '6:30a — 6p' },
+    5: { open: '6:30', close: '18:00', label: '6:30a — 6p' },
+    6: { open: '7:00', close: '15:00', label: '7a — 3p' }
+  };
 
   const el = (tag, props = {}, ...children) => {
     const node = document.createElement(tag);
@@ -34,6 +49,67 @@
   };
   const clearNode = (n) => { while (n.firstChild) n.removeChild(n.firstChild); };
 
+  // ---------- Time slots ----------
+  const fmtTime = (h, m) => {
+    const am = h < 12;
+    const hr = h === 0 ? 12 : (h > 12 ? h - 12 : h);
+    return hr + ':' + String(m).padStart(2, '0') + (am ? 'a' : 'p');
+  };
+  const parseHM = (s) => { const [h, m] = s.split(':').map(Number); return [h, m]; };
+  const minutesFromMidnight = (h, m) => h * 60 + m;
+
+  const buildSlots = () => {
+    if (!timeSelect) return;
+    const now = new Date();
+    const day = now.getDay();
+    const hours = HOURS[day];
+    if (hoursNote) hoursNote.textContent = 'Open today · ' + hours.label;
+    clearNode(timeSelect);
+
+    const [openH, openM] = parseHM(hours.open);
+    const [closeH, closeM] = parseHM(hours.close);
+    const closeAbs = minutesFromMidnight(closeH, closeM);
+    const openAbs = minutesFromMidnight(openH, openM);
+
+    // Earliest pickup = max(now + 15min lead, open) rounded UP to 10-min
+    const leadAbs = now.getHours() * 60 + now.getMinutes() + 15;
+    let firstSlot = Math.max(leadAbs, openAbs);
+    firstSlot = Math.ceil(firstSlot / 10) * 10;
+
+    // Latest pickup = close - 10min
+    const lastSlot = closeAbs - 10;
+
+    if (firstSlot > lastSlot) {
+      timeSelect.appendChild(el('option', { value: '' }, "Sorry — we're closed for today"));
+      timeSelect.disabled = true;
+      if (placeBtn) { placeBtn.disabled = true; placeBtn.style.opacity = '0.5'; }
+      return;
+    }
+
+    // ASAP option
+    timeSelect.appendChild(el('option', {
+      value: 'asap:' + firstSlot
+    }, 'ASAP — ready ~' + fmtTime(Math.floor(firstSlot / 60), firstSlot % 60)));
+
+    // 10-minute intervals
+    for (let m = firstSlot; m <= lastSlot; m += 10) {
+      const h = Math.floor(m / 60);
+      const min = m % 60;
+      timeSelect.appendChild(el('option', { value: 'slot:' + m }, fmtTime(h, min)));
+    }
+  };
+
+  buildSlots();
+  // Refresh slots every 2 minutes so the list stays current
+  setInterval(buildSlots, 120000);
+
+  // ---------- Cart rendering ----------
+  const renderModSummary = (mods) => {
+    if (!mods || !mods.length) return null;
+    const text = mods.map(m => m.label + (m.price > 0 ? ' +$' + m.price.toFixed(2) : '')).join(' · ');
+    return el('div', { class: 'cart-item-mods' }, text);
+  };
+
   const renderEmpty = () => {
     const link = el('a', { href: 'menu.html', class: 'btn btn-primary btn-arrow', style: 'margin-top:1.5rem; display:inline-flex;' }, 'Browse Menu');
     return el('div', { class: 'cart-empty', style: 'padding: 4rem 2rem;' },
@@ -47,9 +123,15 @@
   const renderLine = (i) => {
     const rmBtn = el('button', { class: 'cart-remove', dataset: { act: 'rm' }, 'aria-label': `Remove ${i.name}` }, '×');
     return el('div', { class: 'summary-line', dataset: { id: i.id } },
-      el('span', {}, el('span', { class: 'qty-tag' }, '×' + i.qty), document.createTextNode(i.name)),
-      el('span', { style: 'display:flex; align-items:center; gap: 0.6rem;' },
-        el('span', { style: 'color: var(--amber-deep);' }, '$' + (i.price * i.qty).toFixed(2)),
+      el('div', {},
+        el('div', {},
+          el('span', { class: 'qty-tag' }, '×' + i.qty),
+          document.createTextNode(i.name)
+        ),
+        renderModSummary(i.modifiers)
+      ),
+      el('span', { style: 'display:flex; align-items:center; gap: 0.6rem; flex-shrink: 0;' },
+        el('span', { style: 'color: var(--amber-deep);' }, '$' + itemTotal(i).toFixed(2)),
         rmBtn
       )
     );
@@ -77,7 +159,7 @@
     if (subtotalEl) subtotalEl.textContent = '$' + sub.toFixed(2);
     if (taxEl) taxEl.textContent = '$' + tax.toFixed(2);
     if (totalEl) totalEl.textContent = '$' + (sub + tax).toFixed(2);
-    if (placeBtn) {
+    if (placeBtn && !timeSelect?.disabled) {
       placeBtn.disabled = false;
       placeBtn.style.opacity = '';
       placeBtn.style.cursor = '';
@@ -95,6 +177,7 @@
   document.addEventListener('cart:change', render);
   render();
 
+  // ---------- Submit ----------
   const form = document.getElementById('orderForm');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -104,11 +187,22 @@
     const location = data.get('location') === 'dupont'
       ? 'Dupont Road · 4635 E Dupont Rd'
       : 'Covington Road · 6511 Covington Rd';
+    const method = data.get('method') === 'drive-thru' ? 'Drive-thru' : 'In-person';
+    const timeRaw = data.get('time') || '';
+    let timeLabel = '—';
+    const timeMatch = timeRaw.match(/^(asap|slot):(\d+)$/);
+    if (timeMatch) {
+      const mins = parseInt(timeMatch[2], 10);
+      timeLabel = fmtTime(Math.floor(mins / 60), mins % 60);
+      if (timeMatch[1] === 'asap') timeLabel = 'ASAP — ' + timeLabel;
+    }
     const sub = total(state);
     const grand = sub * (1 + TAX_RATE);
     const orderId = 'ML-' + Date.now().toString(36).toUpperCase().slice(-6);
     if (successId) successId.textContent = 'Order #' + orderId;
     if (successLocation) successLocation.textContent = location;
+    if (successMethod) successMethod.textContent = method;
+    if (successTime) successTime.textContent = timeLabel;
     if (successTotal) successTotal.textContent = '$' + grand.toFixed(2);
     if (checkoutShell) checkoutShell.style.display = 'none';
     if (successShell) successShell.style.display = 'block';

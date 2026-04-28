@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mocha Lounge — Coffee & Community in Fort Wayne</title>
+<meta name="description" content="A Fort Wayne neighborhood coffee lounge since 2004. Hand-crafted espresso, made-to-order breakfast & lunch, house-baked pastries. Two locations: Covington Rd & Dupont Rd." />
+<meta property="og:title" content="Mocha Lounge — Fort Wayne's Neighborhood Coffee Lounge" />
+<meta property="og:description" content="Coffee & Community since 2004. Two Fort Wayne locations." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315100D'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Bricolage Grotesque,Inter,sans-serif' font-weight='700' font-size='62' fill='%23D89B4A'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav dark" id="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark">M</span>
+    <span>Mocha Lounge</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link" aria-current="page">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="visit.html" class="nav-link">Visit</a>
+  </div>
+  <a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener" class="nav-cta">Order Online →</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=2400&q=85" alt="Latte art on a wooden bar" loading="eager" />
+  </div>
+  <div class="wrap hero-content">
+    <div style="max-width: 1100px;">
+      <div class="hero-tag fade-up" style="animation-delay: 0.15s;">Fort Wayne · Since 2004 · Two Locations</div>
+      <h1 class="display fade-up" style="font-size: clamp(4rem, 13.5vw, 12.5rem); margin-top: 1.6rem; animation-delay: 0.3s; color: var(--bg);">
+        Coffee &amp;<br />
+        <span class="serif" style="color: var(--amber); font-size: 0.92em; display: inline-block;">community,</span><br />
+        on the corner.
+      </h1>
+    </div>
+    <div class="hero-bottom">
+      <p class="lead fade-up" style="animation-delay: 0.55s; color: rgba(250,244,236,0.85); max-width: 52ch;">
+        A neighborhood lounge where the espresso is hand-pulled, the pecan coffee cake comes out of the oven before you do, and the regulars know which booth is yours. Two Fort Wayne corners — same warm welcome.
+      </p>
+      <div class="fade-up flex gap-4" style="animation-delay: 0.75s; flex-wrap: wrap; justify-self: end;">
+        <a href="menu.html" class="btn btn-amber btn-arrow">See the Menu
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="visit.html" class="btn btn-ghost-light btn-arrow">Find a Location
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-mark">Scroll · m</div>
+</header>
+
+<!-- MARQUEE -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Espresso</span>
+    <span class="marquee-item marquee-serif">made-to-order</span>
+    <span class="marquee-item">Smoothies</span>
+    <span class="marquee-item marquee-serif">house-baked</span>
+    <span class="marquee-item">Lattes</span>
+    <span class="marquee-item marquee-serif">community</span>
+    <span class="marquee-item">Espresso</span>
+    <span class="marquee-item marquee-serif">made-to-order</span>
+    <span class="marquee-item">Smoothies</span>
+    <span class="marquee-item marquee-serif">house-baked</span>
+    <span class="marquee-item">Lattes</span>
+    <span class="marquee-item marquee-serif">community</span>
+  </div>
+</section>
+
+<!-- INTRO / EDITORIAL -->
+<section class="section">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill pill-dot">A neighborhood lounge</span>
+      </div>
+      <div style="grid-column: 5 / -1;">
+        <h2 class="h-1" data-reveal>
+          Slow mornings. <br /><span class="serif text-amber">Long afternoons.</span> <br />Coffee that makes both better.
+        </h2>
+        <p class="lead mt-6" data-reveal data-delay="2">
+          Brian Till opened the original Mocha Lounge on Covington Road in 2004 with a simple idea — a place where Fort Wayne could slow down. Twenty years later, the espresso machine is still on the same counter, the regulars still get the corner booth, and the second location on Dupont keeps the same promise. <em class="serif text-amber">Coffee &amp; community.</em>
+        </p>
+        <div class="mt-7 flex gap-4" style="flex-wrap:wrap;" data-reveal data-delay="3">
+          <a href="story.html" class="btn btn-primary btn-arrow">Read Our Story
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+          <a href="menu.html" class="btn btn-arrow">What's on the Menu
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
+<section class="section" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="flex justify-between items-end" style="margin-bottom: 4rem; flex-wrap: wrap; gap: 1.5rem;" data-reveal>
+      <div>
+        <span class="pill pill-amber">What We Pour</span>
+        <h2 class="h-2 mt-5">Three things we<br />take seriously.</h2>
+      </div>
+      <div class="dot-row" aria-hidden="true"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="grid grid-3" style="gap: 1.5rem;">
+      <article class="lounge-card" data-reveal>
+        <span class="lounge-badge">01</span>
+        <div class="lounge-card-img">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85" alt="Espresso pour" loading="lazy" />
+        </div>
+        <div class="lounge-card-body">
+          <h3 class="h-3">Hand-crafted <span class="serif text-amber">drinks.</span></h3>
+          <p class="text-soft mt-4">Espresso, cortados, lattes, mochas, cold brew, real-fruit smoothies, and seasonal teas. Nothing pre-mixed, nothing reheated.</p>
+        </div>
+      </article>
+
+      <article class="lounge-card" data-reveal data-delay="2">
+        <span class="lounge-badge">02</span>
+        <div class="lounge-card-img">
+          <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85" alt="Breakfast sandwich" loading="lazy" />
+        </div>
+        <div class="lounge-card-body">
+          <h3 class="h-3">Made-to-order <span class="serif text-amber">kitchen.</span></h3>
+          <p class="text-soft mt-4">Breakfast sandwiches, wraps, and bowls until 11. Lunch from 10 to 2 — Club Lounger, Smokey Garlic BLT, Sweet n' Spicy Chicken, Veggie Naan. Local where we can.</p>
+        </div>
+      </article>
+
+      <article class="lounge-card" data-reveal data-delay="3">
+        <span class="lounge-badge">03</span>
+        <div class="lounge-card-img">
+          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=900&q=85" alt="House-baked pastries" loading="lazy" />
+        </div>
+        <div class="lounge-card-body">
+          <h3 class="h-3">House-baked <span class="serif text-amber">pastries.</span></h3>
+          <p class="text-soft mt-4">The pecan coffee cake people drive across town for. Muffins, cookies, scones, and desserts — with gluten-free and vegan options every day.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="section center">
+  <div class="wrap" style="max-width: 1000px;">
+    <p class="pull-quote" data-reveal>
+      "Pull up a chair. Stay an hour. <br />
+      <span class="text-amber">Or stay all afternoon —</span> <br />we kept your seat."
+    </p>
+    <div class="mt-6 text-dim" style="font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase;" data-reveal data-delay="1">
+      — The lounge, since 2004
+    </div>
+  </div>
+</section>
+
+<!-- TWO LOCATIONS — key differentiator -->
+<section class="section section-dark">
+  <div class="wrap">
+    <div data-reveal>
+      <span class="pill pill-dark">Two Fort Wayne corners</span>
+      <h2 class="h-1 mt-5" style="color: var(--bg);">Same lounge.<br /><span class="serif" style="color: var(--amber);">Two corners of town.</span></h2>
+      <p class="lead mt-5" style="color: rgba(250,244,236,0.78);">Whether you're closer to the southwest side or up by Dupont, your morning is covered. Both locations open at 6:30am on weekdays.</p>
+    </div>
+
+    <div class="grid grid-2 mt-9" style="gap: 2rem;">
+      <article class="location-card" style="background: var(--ink-2); border-color: rgba(250,244,236,0.08); color: var(--bg);" data-reveal>
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85" alt="Covington Road location" loading="lazy" />
+          <span class="pill pill-amber location-tag">The Original · 2004</span>
+        </div>
+        <div class="location-body">
+          <h3 class="h-3" style="color: var(--bg);">Covington <span class="serif" style="color: var(--amber);">Road.</span></h3>
+          <p style="color: rgba(250,244,236,0.78); font-size: 1.05rem;">The flagship, on the southwest side. Big windows, the corner booth, and the smell of fresh pecan coffee cake by 7am.</p>
+          <div class="location-meta" style="border-top-color: rgba(250,244,236,0.12);">
+            <div>
+              <div class="location-label" style="color: rgba(250,244,236,0.5);">Address</div>
+              <p class="mt-2" style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; line-height: 1.4;">6511 Covington Rd<br />Fort Wayne, IN 46804</p>
+            </div>
+            <div>
+              <div class="location-label" style="color: rgba(250,244,236,0.5);">Phone</div>
+              <p class="mt-2" style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem;">(260) 434-1999</p>
+            </div>
+          </div>
+          <a href="visit.html" class="btn btn-amber btn-arrow" style="align-self: start;">Hours &amp; Directions
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <article class="location-card" style="background: var(--ink-2); border-color: rgba(250,244,236,0.08); color: var(--bg);" data-reveal data-delay="2">
+        <div class="location-img">
+          <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&w=1200&q=85" alt="Dupont Road location" loading="lazy" />
+          <span class="pill pill-amber location-tag">The Northside</span>
+        </div>
+        <div class="location-body">
+          <h3 class="h-3" style="color: var(--bg);">Dupont <span class="serif" style="color: var(--amber);">Road.</span></h3>
+          <p style="color: rgba(250,244,236,0.78); font-size: 1.05rem;">A second home for the north side of town. Same espresso, same recipes, same welcome — closer to your morning commute.</p>
+          <div class="location-meta" style="border-top-color: rgba(250,244,236,0.12);">
+            <div>
+              <div class="location-label" style="color: rgba(250,244,236,0.5);">Address</div>
+              <p class="mt-2" style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; line-height: 1.4;">4635 E Dupont Rd<br />Fort Wayne, IN 46825</p>
+            </div>
+            <div>
+              <div class="location-label" style="color: rgba(250,244,236,0.5);">Phone</div>
+              <p class="mt-2" style="font-family: var(--font-serif); font-style: italic; font-size: 1.15rem;">(260) 449-9267</p>
+            </div>
+          </div>
+          <a href="visit.html" class="btn btn-amber btn-arrow" style="align-self: start;">Hours &amp; Directions
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDE / GRID -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <span class="pill">On the counter</span>
+      <h2 class="h-1 mt-5">Open early.<br /><span class="serif text-amber">Every day.</span></h2>
+    </div>
+
+    <div class="grid grid-4 mt-9" style="gap: 1rem;">
+      <div class="card" data-reveal>
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">01</div>
+        <h4 class="h-4 mt-3">Espresso Bar</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Single, double, lattes, cortados, mochas — pulled to order, served in a warm cup.</p>
+      </div>
+      <div class="card" data-reveal data-delay="1">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">02</div>
+        <h4 class="h-4 mt-3">Smoothies</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Real fruit, blended on demand. Add protein, oat milk, or a shot of espresso.</p>
+      </div>
+      <div class="card" data-reveal data-delay="2">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">03</div>
+        <h4 class="h-4 mt-3">Breakfast</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Sandwiches, wraps, and bowls. Egg on a bagel to ranchero chorizo — your call.</p>
+      </div>
+      <div class="card" data-reveal data-delay="3">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">04</div>
+        <h4 class="h-4 mt-3">Lunch · 10–2</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Club Lounger, Smokey Garlic BLT, Veggie Naan, soup of the day.</p>
+      </div>
+      <div class="card" data-reveal>
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">05</div>
+        <h4 class="h-4 mt-3">Pastry Case</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">House-baked daily. The pecan coffee cake is the house favorite for a reason.</p>
+      </div>
+      <div class="card" data-reveal data-delay="1">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">06</div>
+        <h4 class="h-4 mt-3">GF + Vegan</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Gluten-free and vegan options every day — pastries, milks, and lunch builds.</p>
+      </div>
+      <div class="card" data-reveal data-delay="2">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">07</div>
+        <h4 class="h-4 mt-3">Free Wi-Fi</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Outlets at most tables. Stay an hour. Stay till the laptop dies.</p>
+      </div>
+      <div class="card" data-reveal data-delay="3">
+        <div class="text-amber" style="font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;">08</div>
+        <h4 class="h-4 mt-3">Order Online</h4>
+        <p class="text-soft mt-3" style="font-size: 0.95rem;">Curbside, in-store pickup, or grab a gift card. Skip the line on busy mornings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-tight" style="background: var(--bg-2);">
+  <div class="wrap">
+    <div class="grid grid-4">
+      <div data-reveal>
+        <div class="stat-num">2004</div>
+        <div class="stat-label">Pouring on Covington since</div>
+      </div>
+      <div data-reveal data-delay="1">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Fort Wayne locations</div>
+      </div>
+      <div data-reveal data-delay="2">
+        <div class="stat-num">6:30<span style="font-size: 0.5em;">a</span></div>
+        <div class="stat-label">Doors open weekdays</div>
+      </div>
+      <div data-reveal data-delay="3">
+        <div class="stat-num">★ 4.6</div>
+        <div class="stat-label">Across 130+ reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div data-reveal>
+      <span class="pill">What Fort Wayne says</span>
+      <h2 class="h-2 mt-5">The regulars,<br /><span class="serif text-amber">not the ads.</span></h2>
+    </div>
+    <div class="grid grid-3 mt-8">
+      <blockquote class="card" data-reveal>
+        <div class="text-amber" style="font-size: 1.5rem; line-height: 1;">"</div>
+        <p class="serif" style="font-size: 1.35rem; line-height: 1.45; margin-top: 0.5rem;">My weekly pecan coffee cake stop. The pastry alone is worth the drive — but the latte is what brings me back twice a week.</p>
+        <footer class="mt-6" style="font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">— Yelp Review</footer>
+      </blockquote>
+      <blockquote class="card" data-reveal data-delay="1">
+        <div class="text-amber" style="font-size: 1.5rem; line-height: 1;">"</div>
+        <p class="serif" style="font-size: 1.35rem; line-height: 1.45; margin-top: 0.5rem;">Best independent coffee shop in Fort Wayne, full stop. The Club Lounger is my Saturday ritual.</p>
+        <footer class="mt-6" style="font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">— Google Review</footer>
+      </blockquote>
+      <blockquote class="card" data-reveal data-delay="2">
+        <div class="text-amber" style="font-size: 1.5rem; line-height: 1;">"</div>
+        <p class="serif" style="font-size: 1.35rem; line-height: 1.45; margin-top: 0.5rem;">I've worked from the Dupont location three days a week for two years. They know my drink. That's the magic.</p>
+        <footer class="mt-6" style="font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">— Regular</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section section-dark" style="padding-block: clamp(6rem, 12vw, 11rem); position: relative; overflow: hidden;">
+  <div style="position:absolute; inset: 0; background: radial-gradient(ellipse at 30% 30%, var(--amber-glow), transparent 55%); pointer-events: none;"></div>
+  <div class="wrap center" style="position: relative;">
+    <span class="pill pill-dark" data-reveal>Today</span>
+    <h2 class="h-mega mt-6" style="color: var(--bg);" data-reveal data-delay="1">
+      The lounge is<br /><span class="serif" style="color: var(--amber);">open.</span>
+    </h2>
+    <p class="lead mt-6" style="margin: 1.5rem auto 0; color: rgba(250,244,236,0.78);" data-reveal data-delay="2">
+      The espresso machine is hot, the pastry case is full, and there's a chair with your name on it.
+    </p>
+    <div class="mt-8 flex gap-4" style="justify-content: center; flex-wrap: wrap;" data-reveal data-delay="3">
+      <a href="menu.html" class="btn btn-amber btn-arrow">View Full Menu
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+      <a href="visit.html" class="btn btn-ghost-light btn-arrow">Get Directions
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">Mocha<span style="color: var(--amber);">.</span></div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Coffee &amp; Community</h4>
+        <p style="color: rgba(250,244,236,0.7); line-height: 1.6; max-width: 32ch;">A Fort Wayne neighborhood lounge since 2004. Two locations, one welcome.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Covington Rd</a></li>
+          <li><a href="visit.html">Dupont Rd</a></li>
+          <li><a href="visit.html">Hours</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/mochaloungefw/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/mocha.lounge/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:hello@mochaloungefw.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Mocha Lounge · Fort Wayne, Indiana</span>
+      <span>Site by <a href="https://sweetdreamsmusic.com" target="_blank" rel="noopener">Sweet Dreams Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

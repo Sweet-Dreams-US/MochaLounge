@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Menu — Mocha Lounge Fort Wayne</title>
+<meta name="description" content="Espresso drinks, smoothies, breakfast sandwiches, lunch, and house-baked pastries at Mocha Lounge Fort Wayne." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315100D'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Bricolage Grotesque,Inter,sans-serif' font-weight='700' font-size='62' fill='%23D89B4A'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-mark">M</span>
+    <span>Mocha Lounge</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link" aria-current="page">Menu</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="visit.html" class="nav-link">Visit</a>
+  </div>
+  <a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener" class="nav-cta">Order Online &rarr;</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="section" style="padding-top: 10rem; padding-bottom: 4rem;">
+  <div class="wrap">
+    <span class="pill pill-amber fade-up">The Menu</span>
+    <h1 class="h-mega mt-5 fade-up" style="animation-delay: 0.15s;">
+      Made-to-order.<br /><span class="serif text-amber">All day.</span>
+    </h1>
+    <p class="lead mt-6 fade-up" style="animation-delay: 0.3s; max-width: 60ch;">
+      Drinks pulled to order. Sandwiches built when you ask. Pastries baked this morning. Prices below are demo placeholders &mdash; call the shop for current.
+    </p>
+    <div class="mt-7 flex gap-3 fade-up" style="flex-wrap: wrap; animation-delay: 0.45s;">
+      <a href="#espresso" class="pill">Espresso</a>
+      <a href="#cold" class="pill">Cold &amp; Smoothies</a>
+      <a href="#breakfast" class="pill">Breakfast</a>
+      <a href="#lunch" class="pill">Lunch</a>
+      <a href="#bakery" class="pill">Bakery</a>
+    </div>
+  </div>
+</header>
+
+<section id="espresso" class="section" style="padding-top: 4rem;">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill">01 &mdash; Espresso Bar</span>
+        <h2 class="h-2 mt-5">Pulled<br /><span class="serif text-amber">to order.</span></h2>
+        <p class="text-soft mt-5" style="max-width: 32ch;">Single, double, ristretto. Served in a warm cup. Oat, almond, or whole milk &mdash; your call, no upcharge on the basics.</p>
+      </div>
+      <div style="grid-column: 6 / -1;" data-reveal data-delay="2">
+        <div class="menu-row"><div><div class="menu-row-name">Espresso</div><div class="menu-row-desc">A single shot &mdash; pulled, served, savored.</div></div><div class="menu-row-price">2.75</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Cortado</div><div class="menu-row-desc">Double shot, equal parts steamed milk.</div></div><div class="menu-row-price">4.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Cappuccino</div><div class="menu-row-desc">Espresso, steamed milk, dry foam crown.</div></div><div class="menu-row-price">4.75</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Latte</div><div class="menu-row-desc">House favorite. Vanilla, caramel, lavender, or plain.</div></div><div class="menu-row-price">5.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Mocha</div><div class="menu-row-desc">Belgian chocolate, espresso, steamed milk.</div></div><div class="menu-row-price">5.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Drip Coffee</div><div class="menu-row-desc">Two daily roasts. Free refills if you stay.</div></div><div class="menu-row-price">3.25</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cold" class="section" style="background: var(--bg-2); padding-top: 5rem; padding-bottom: 5rem;">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill pill-amber">02 &mdash; Cold &amp; Smoothies</span>
+        <h2 class="h-2 mt-5">For the<br /><span class="serif text-amber">warm days.</span></h2>
+        <p class="text-soft mt-5" style="max-width: 32ch;">Real fruit, blended on demand. 24-hour cold brew on tap. Add a shot of espresso to anything.</p>
+      </div>
+      <div style="grid-column: 6 / -1;" data-reveal data-delay="2">
+        <div class="menu-row"><div><div class="menu-row-name">Cold Brew</div><div class="menu-row-desc">24-hour steeped. Smooth, low-acid, dangerous.</div></div><div class="menu-row-price">4.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Iced Latte</div><div class="menu-row-desc">Espresso over ice with milk of choice.</div></div><div class="menu-row-price">5.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Berry Bliss Smoothie</div><div class="menu-row-desc">Strawberry, blueberry, banana, vanilla yogurt.</div></div><div class="menu-row-price">6.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Mango Sunrise</div><div class="menu-row-desc">Mango, pineapple, orange, a touch of ginger.</div></div><div class="menu-row-price">6.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Green Glow</div><div class="menu-row-desc">Spinach, banana, apple, almond butter, oat milk.</div></div><div class="menu-row-price">7.00</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Loose-Leaf Tea</div><div class="menu-row-desc">Earl Grey, English Breakfast, jasmine, chamomile, chai.</div></div><div class="menu-row-price">3.75</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="breakfast" class="section" style="padding-top: 5rem;">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill">03 &mdash; Breakfast &middot; Until 11</span>
+        <h2 class="h-2 mt-5">First<br /><span class="serif text-amber">things first.</span></h2>
+        <p class="text-soft mt-5" style="max-width: 32ch;">Eggs cracked when you order. Bacon, sausage, or chorizo. Bagel, English muffin, croissant, or biscuit.</p>
+      </div>
+      <div style="grid-column: 6 / -1;" data-reveal data-delay="2">
+        <div class="menu-row"><div><div class="menu-row-name">Classic Egg Sandwich</div><div class="menu-row-desc">Two eggs, cheddar, choice of meat, on your bread.</div></div><div class="menu-row-price">7.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Ranchero Chorizo Wrap</div><div class="menu-row-desc">Chorizo, eggs, pepper jack, salsa, in a flour tortilla.</div></div><div class="menu-row-price">9.00</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Avocado Toast</div><div class="menu-row-desc">Sourdough, smashed avocado, chili crunch, soft egg.</div></div><div class="menu-row-price">8.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Berry Yogurt Bowl</div><div class="menu-row-desc">Vanilla yogurt, granola, fresh berries, local honey.</div></div><div class="menu-row-price">7.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Veggie Scramble Bowl</div><div class="menu-row-desc">Three eggs, spinach, peppers, mushrooms, feta.</div></div><div class="menu-row-price">9.50</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lunch" class="section section-dark" style="padding-top: 5rem; padding-bottom: 5rem;">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill pill-dark">04 &mdash; Lunch &middot; 10 to 2</span>
+        <h2 class="h-2 mt-5" style="color: var(--bg);">Sandwich<br /><span class="serif" style="color: var(--amber);">o'clock.</span></h2>
+        <p class="mt-5" style="max-width: 32ch; color: rgba(250,244,236,0.72);">House recipes the regulars built. Local where we can. Add chips and a pickle for $2.</p>
+      </div>
+      <div style="grid-column: 6 / -1;" data-reveal data-delay="2">
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">The Club Lounger</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Turkey, ham, bacon, swiss, lettuce, tomato, herb mayo.</div></div><div class="menu-row-price">11.50</div></div>
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">Smokey Garlic BLT</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Thick-cut bacon, roasted garlic aioli, heirloom tomato.</div></div><div class="menu-row-price">10.75</div></div>
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">Sweet n' Spicy Chicken</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Grilled chicken, hot honey, pepper jack, slaw.</div></div><div class="menu-row-price">11.25</div></div>
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">Ham Jam</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Black forest ham, fig jam, brie, arugula, on sourdough.</div></div><div class="menu-row-price">10.50</div></div>
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">Ultimate Grilled Cheese</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Three cheeses, sourdough, tomato bisque on the side.</div></div><div class="menu-row-price">10.00</div></div>
+        <div class="menu-row" style="border-color: rgba(250,244,236,0.15);"><div><div class="menu-row-name" style="color: var(--bg);">Veggie Naan</div><div class="menu-row-desc" style="color: rgba(250,244,236,0.6);">Hummus, roasted veg, feta, greens &mdash; toasted naan flatbread.</div></div><div class="menu-row-price">10.25</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bakery" class="section" style="padding-top: 5rem;">
+  <div class="wrap">
+    <div class="grid-12">
+      <div style="grid-column: 1 / span 4;" data-reveal>
+        <span class="pill pill-amber">05 &mdash; Bakery</span>
+        <h2 class="h-2 mt-5">From the<br /><span class="serif text-amber">house oven.</span></h2>
+        <p class="text-soft mt-5" style="max-width: 32ch;">Baked early. Sold all day or until they're gone &mdash; usually whichever comes first.</p>
+        <div class="mt-6 dot-row" aria-hidden="true"><span></span><span></span><span></span></div>
+      </div>
+      <div style="grid-column: 6 / -1;" data-reveal data-delay="2">
+        <div class="menu-row"><div><div class="menu-row-name">Pecan Coffee Cake <span class="text-amber" style="font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; margin-left: 0.5rem;">&mdash; House Favorite</span></div><div class="menu-row-desc">The reason regulars drive across town. Buttery, brown-sugar topped.</div></div><div class="menu-row-price">4.50</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Blueberry Muffin</div><div class="menu-row-desc">Crunchy sugar top, fresh berries, soft middle.</div></div><div class="menu-row-price">3.75</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Chocolate Chunk Cookie</div><div class="menu-row-desc">Pulled warm at 9am and again at 2pm.</div></div><div class="menu-row-price">3.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Almond Croissant</div><div class="menu-row-desc">Twice-baked, frangipane filling, toasted almonds.</div></div><div class="menu-row-price">4.75</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">GF Lemon Loaf</div><div class="menu-row-desc">Gluten-free, lemon-zest glaze. Don't tell the regulars.</div></div><div class="menu-row-price">4.25</div></div>
+        <div class="menu-row"><div><div class="menu-row-name">Vegan Banana Bread</div><div class="menu-row-desc">No dairy, no eggs, no compromise &mdash; walnut-studded.</div></div><div class="menu-row-price">4.00</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight" style="background: var(--bg-2); border-top: 1px solid var(--line);">
+  <div class="wrap flex justify-between items-center" style="flex-wrap: wrap; gap: 2rem;">
+    <div data-reveal>
+      <h3 class="h-3">Skip the line.</h3>
+      <p class="text-soft mt-2" style="max-width: 50ch;">Order ahead through Square. Pay, pick up, and be back to your day.</p>
+    </div>
+    <a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow" data-reveal data-delay="1">
+      Order Online
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">Mocha<span style="color: var(--amber);">.</span></div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Coffee &amp; Community</h4>
+        <p style="color: rgba(250,244,236,0.7); line-height: 1.6; max-width: 32ch;">A Fort Wayne neighborhood lounge since 2004. Two locations, one welcome.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Covington Rd</a></li>
+          <li><a href="visit.html">Dupont Rd</a></li>
+          <li><a href="visit.html">Hours</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/mochaloungefw/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/mocha.lounge/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:hello@mochaloungefw.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Mocha Lounge &middot; Fort Wayne, Indiana</span>
+      <span>Site by <a href="https://sweetdreamsmusic.com" target="_blank" rel="noopener">Sweet Dreams Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>

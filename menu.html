@@ -25,7 +25,7 @@
     <a href="story.html" class="nav-link">Story</a>
     <a href="visit.html" class="nav-link">Visit</a>
   </div>
-  <a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener" class="nav-cta">Order Online &rarr;</a>
+  <a href="menu.html" class="nav-cta">Order Online &rarr;</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -154,10 +154,10 @@
   <div class="wrap flex justify-between items-center" style="flex-wrap: wrap; gap: 2rem;">
     <div data-reveal>
       <h3 class="h-3">Skip the line.</h3>
-      <p class="text-soft mt-2" style="max-width: 50ch;">Order ahead through Square. Pay, pick up, and be back to your day.</p>
+      <p class="text-soft mt-2" style="max-width: 50ch;">Tap the <strong>+</strong> next to anything above, then check out for pickup at either location.</p>
     </div>
-    <a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener" class="btn btn-primary btn-arrow" data-reveal data-delay="1">
-      Order Online
+    <a href="order.html" class="btn btn-primary btn-arrow" data-reveal data-delay="1">
+      Review Order
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
     </a>
   </div>
@@ -184,7 +184,7 @@
         <ul>
           <li><a href="menu.html">Menu</a></li>
           <li><a href="story.html">Our Story</a></li>
-          <li><a href="https://mocha-lounge.square.site/" target="_blank" rel="noopener">Order Online</a></li>
+          <li><a href="order.html">Order Online</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -202,6 +202,37 @@
   </div>
 </footer>
 
+<!-- Cart FAB -->
+<button class="cart-fab" id="cartFab" aria-label="View your order">
+  <span>BAG</span>
+  <span class="cart-fab-count" id="cartFabCount">0</span>
+</button>
+
+<!-- Cart overlay + drawer -->
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order" role="dialog">
+  <div class="cart-header">
+    <div>
+      <div class="cart-title">Your order</div>
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.25rem;">Pickup · ready in 15–20 min</div>
+    </div>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-amount" id="cartTotal">$0.00</span>
+    </div>
+    <a href="order.html" class="btn btn-primary btn-arrow" style="width: 100%; justify-content: center;">
+      Checkout
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+    </a>
+    <p class="cart-note">Demo only · prices are illustrative · pay at pickup</p>
+  </div>
+</aside>
+
 <script src="scripts/main.js" defer></script>
+<script src="scripts/cart.js" defer></script>
 </body>
 </html>

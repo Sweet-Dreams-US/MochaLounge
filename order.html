@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Order — Mocha Lounge Fort Wayne</title>
+<meta name="description" content="Review your order and check out for pickup at Mocha Lounge Fort Wayne." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2315100D'/%3E%3Ctext x='50' y='70' text-anchor='middle' font-family='Anton,Impact,sans-serif' font-size='62' fill='%23E59B36'%3EM%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-tagline">Coffee &amp; Community</span>
+    <span class="nav-wordmark">Mocha Lounge</span>
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="visit.html" class="nav-link">Visit</a>
+  </div>
+  <a href="menu.html" class="nav-cta">Add More &rarr;</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Checkout shell -->
+<div id="checkoutShell">
+  <header class="section" style="padding-top: 9rem; padding-bottom: 3rem;">
+    <div class="wrap">
+      <span class="pill pill-amber fade-up">Checkout</span>
+      <h1 class="display mt-5 fade-up" style="animation-delay: 0.15s; font-size: clamp(3rem, 8vw, 7rem);">
+        Review your <span class="serif text-amber">order.</span>
+      </h1>
+      <p class="lead mt-5 fade-up" style="animation-delay: 0.3s; max-width: 60ch;">
+        Pick a location, choose your time, and we'll have it ready when you walk in. Demo checkout — no card is charged.
+      </p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 1rem;">
+    <div class="wrap">
+      <form id="orderForm" class="checkout-grid">
+        <!-- LEFT: Order summary + customer + payment -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+          <div class="checkout-panel" data-reveal>
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Your <span class="serif text-amber">items.</span></h3>
+            <div id="orderSummary"></div>
+            <div style="display: flex; justify-content: space-between; padding-top: 1rem; margin-top: 1rem; border-top: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">
+              <span>Subtotal</span><span id="orderSubtotal">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-top: 0.4rem; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">
+              <span>Tax (7%)</span><span id="orderTax">$0.00</span>
+            </div>
+            <div class="summary-total">
+              <span class="label">Total</span>
+              <span class="amount" id="orderTotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="checkout-panel" data-reveal data-delay="1">
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Pickup <span class="serif text-amber">where.</span></h3>
+            <div class="location-pick">
+              <label>
+                <input type="radio" name="location" value="covington" checked />
+                <span class="location-pick-name">Covington</span>
+                <span class="location-pick-detail">6511 Covington Rd</span>
+              </label>
+              <label>
+                <input type="radio" name="location" value="dupont" />
+                <span class="location-pick-name">Dupont</span>
+                <span class="location-pick-detail">4635 E Dupont Rd</span>
+              </label>
+            </div>
+
+            <h3 class="h-3" style="margin: 2rem 0 1.25rem;">Pickup <span class="serif text-amber">when.</span></h3>
+            <div class="time-pick">
+              <label><input type="radio" name="time" value="asap" checked /><span>ASAP</span></label>
+              <label><input type="radio" name="time" value="30" /><span>30 min</span></label>
+              <label><input type="radio" name="time" value="45" /><span>45 min</span></label>
+              <label><input type="radio" name="time" value="60" /><span>1 hour</span></label>
+            </div>
+          </div>
+
+          <div class="checkout-panel" data-reveal data-delay="2">
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Your <span class="serif text-amber">info.</span></h3>
+            <div class="grid grid-2" style="gap: 1rem;">
+              <div class="field">
+                <label for="cust-name">Name</label>
+                <input id="cust-name" name="name" type="text" required placeholder="Jamie Doe" />
+              </div>
+              <div class="field">
+                <label for="cust-phone">Phone</label>
+                <input id="cust-phone" name="phone" type="tel" required placeholder="(260) 555-0199" />
+              </div>
+              <div class="field" style="grid-column: 1 / -1;">
+                <label for="cust-email">Email (for receipt)</label>
+                <input id="cust-email" name="email" type="email" required placeholder="you@example.com" />
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-panel fake-card" data-reveal data-delay="3">
+            <h3 class="h-3" style="margin-bottom: 0.5rem; color: var(--bg);">Payment</h3>
+            <p style="color: rgba(244,236,221,0.65); font-size: 0.85rem; margin-bottom: 1.25rem;">Live site will use Square — secure card capture, Apple Pay, Google Pay.</p>
+            <div class="field">
+              <label for="card-num">Card number</label>
+              <input id="card-num" type="text" placeholder="4242 4242 4242 4242" autocomplete="off" />
+            </div>
+            <div class="fake-card-row">
+              <div class="field">
+                <label for="card-name">Name on card</label>
+                <input id="card-name" type="text" placeholder="As it appears" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="card-exp">Expires</label>
+                <input id="card-exp" type="text" placeholder="MM/YY" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="card-cvc">CVC</label>
+                <input id="card-cvc" type="text" placeholder="123" autocomplete="off" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Sticky place-order summary -->
+        <div data-reveal data-delay="2">
+          <div class="checkout-panel" style="position: sticky; top: 6rem;">
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Ready to <span class="serif text-amber">go.</span></h3>
+            <div style="font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); line-height: 2;">
+              <div style="display: flex; justify-content: space-between;"><span>Pickup</span><span style="color: var(--ink);">~15 min</span></div>
+              <div style="display: flex; justify-content: space-between;"><span>Method</span><span style="color: var(--ink);">In-store</span></div>
+              <div style="display: flex; justify-content: space-between;"><span>Total</span><span style="color: var(--ink); font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0;" id="orderTotal-mirror">$0.00</span></div>
+            </div>
+            <button id="placeOrder" type="submit" class="btn btn-primary btn-arrow" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+              Place Order
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+            </button>
+            <p class="cart-note" style="margin-top: 1rem;">Demo · no card will be charged · no order will be sent</p>
+            <div class="divider" style="margin-block: 1.5rem;"></div>
+            <p style="font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); line-height: 1.7;">
+              When live, this routes through Square's hosted checkout — PCI compliant, with the same flow as the in-store register.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- Success shell (hidden by default) -->
+<div id="successShell" style="display: none;">
+  <section class="section" style="padding-top: 9rem;">
+    <div class="wrap order-success">
+      <div class="check-mark">✓</div>
+      <span class="pill pill-amber">Order placed</span>
+      <h1 class="display mt-5" style="font-size: clamp(3rem, 7vw, 6rem);">
+        See you in a <span class="serif text-amber">few minutes.</span>
+      </h1>
+      <p class="lead mt-5" style="margin-inline: auto;">
+        We'll have everything ready and bagged when you walk in. Show your name at the counter — coffee's on the bar.
+      </p>
+
+      <div class="checkout-panel" style="max-width: 540px; margin: 3rem auto 0; text-align: left;">
+        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
+          <span>Confirmation</span>
+          <span style="color: var(--ink);" id="successId">Order #ML-XXXX</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px dashed var(--line-2); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
+          <span>Pickup at</span>
+          <span style="color: var(--ink); text-align: right;" id="successLocation">Covington</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding: 0.6rem 0; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim);">
+          <span>Total charged</span>
+          <span style="color: var(--ink); font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0;" id="successTotal">$0.00</span>
+        </div>
+      </div>
+
+      <div class="mt-8 flex gap-4" style="justify-content: center; flex-wrap: wrap;">
+        <a href="menu.html" class="btn btn-amber btn-arrow">Order Again
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="visit.html" class="btn btn-arrow">Get Directions
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">Mocha <span style="color: var(--amber);">Lounge.</span></div>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Coffee &amp; Community</h4>
+        <p style="color: rgba(250,244,236,0.7); line-height: 1.6; max-width: 32ch;">A Fort Wayne neighborhood lounge since 2004. Two locations, one welcome.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="visit.html">Covington Rd</a></li>
+          <li><a href="visit.html">Dupont Rd</a></li>
+          <li><a href="visit.html">Hours</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Our Story</a></li>
+          <li><a href="order.html">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/mochaloungefw/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/mocha.lounge/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:hello@mochaloungefw.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> Mocha Lounge &middot; Fort Wayne, Indiana</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+<script src="scripts/cart.js" defer></script>
+<script src="scripts/order.js" defer></script>
+</body>
+</html>

@@ -217,37 +217,53 @@ body::after {
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 1rem var(--gutter);
-  background: rgba(244, 236, 221, 0.8);
+  padding: 1.65rem var(--gutter);
+  background: rgba(244, 236, 221, 0.78);
   backdrop-filter: blur(14px) saturate(140%);
   border-bottom: 2px solid transparent;
-  transition: background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  transition:
+    padding 380ms var(--ease),
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
-.nav.scrolled { background: rgba(244, 236, 221, 0.96); border-bottom-color: var(--ink); }
-.nav.dark { background: rgba(14, 9, 7, 0.6); color: var(--bg); }
+.nav.scrolled {
+  padding: 0.85rem var(--gutter);
+  background: rgba(244, 236, 221, 0.96);
+  border-bottom-color: var(--ink);
+}
+.nav.dark { background: rgba(14, 9, 7, 0.55); color: var(--bg); }
 .nav.dark.scrolled { background: rgba(14, 9, 7, 0.96); border-bottom-color: var(--amber); }
 .nav.dark .nav-link, .nav.dark .nav-tagline, .nav.dark .nav-wordmark { color: var(--bg); }
 
-/* Stacked wordmark — matches Mocha Lounge's actual brand identity */
+/* Stacked wordmark — matches Mocha Lounge's actual brand identity
+   Bigger on load, shrinks once user scrolls past 24px */
 .nav-brand {
   display: flex; flex-direction: column; align-items: flex-start;
   line-height: 0.85;
 }
 .nav-tagline {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
   color: var(--text-soft);
+  margin-bottom: 4px;
+  transition: font-size 380ms var(--ease), letter-spacing 380ms var(--ease), margin-bottom 380ms var(--ease);
+}
+.nav.scrolled .nav-tagline {
+  font-size: 0.58rem;
+  letter-spacing: 0.32em;
   margin-bottom: 2px;
 }
 .nav-wordmark {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   letter-spacing: -0.005em;
   text-transform: uppercase;
   color: var(--ink);
+  transition: font-size 380ms var(--ease);
 }
+.nav.scrolled .nav-wordmark { font-size: 1.5rem; }
 
 .nav-links { display: flex; gap: 2rem; }
 .nav-link {
